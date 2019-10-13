@@ -2,34 +2,48 @@ function createTxtNode(txtInput){
     let txtEle=createTxtNode(txtInput);
     return txtEle;
 }
-function creatingHeader(){
+function creatingHeader(actualJSON){
     let hEle=document.createElement("h2");
-
-    let txtEle=createTxtNode();
-
+    console.log(actualJSON);
+    let txtInput=actualJSON.headerTexts["headerText1"];
+    console.log(txtInput);
+    let txtEle=createTxtNode(txtInput);
+    hEle.appendChild(txtEle);
+    return hEle;
 }
-function createSelectBlock(){
-    creatingHeader()
-}
-function handleHttpResponse(){
-    
+function createSelectBlock(actualJSON){
+    let hEle=creatingHeader(actualJSON);
+    document.body.appendChild(hEle);
 }
 function readingJSONFile(){
-    const url = `https://takeafile.com/?f=yaxukakero`;
-    let http = new XMLHttpRequest()
+    const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data.json`;
+    let http = new XMLHttpRequest(),
+    stuffForPage="";
+    msgTag=document.getElementsByTagName("msg");
+    let returnVal;
     http.open("GET", url, true);
     http.onreadystatechange = handleHttpResponse;
-    http.send(null);
     function handleHttpResponse() {
         if (http.readyState === 4 && http.status === 200) {
-            document.getElementsByTagName("div")[0].innerHTML = http.responseText;
+            console.log("1",http.responseText)
+            //callback(http.responseText);
         }
-    }
-
+    };
+    http.send(null);
 }
-function populating1(){
-    readingJSONFile();
-    //createSelectBlock();
+
+function setCounter(){
+    let counter=0;
+}
+function init(){
+    let retval=readingJSONFile();
+    /*callback=(response)=>{
+         actualJSON=JSON.parse(response);
+        console.log(actualJSON);
+        createSelectBlock(actualJSON);
+        
+    });*/
+    
 }
 
 
