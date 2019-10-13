@@ -2,6 +2,12 @@ function createTxtNode(txtInput){
     let txtEle=document.createTextNode(txtInput);
     return txtEle;
 }
+function createOptions(optionTxt){
+    let opEle=document.createElement("option");
+    let opTxtNode=createTxtNode(optionTxt);
+    opEle.appendChild(opTxtNode);
+    return opEle;
+}
 function creatingHeader(actualJSON){
     let hEle=document.createElement("h2");
     let txtInput=actualJSON.headerTexts["headerText1"];
@@ -9,20 +15,19 @@ function creatingHeader(actualJSON){
     hEle.appendChild(txtEle);
     return hEle;
 }
-function createOptions(actualJSON){
-   
-
-}
 function createSelectBlock(actualJSON){
     let hEle=creatingHeader(actualJSON);
     document.body.appendChild(hEle);
     let sEle=document.createElement("select");
     let option1=actualJSON.optionsText["option1"][0];
-    let option1=actualJSON.optionsText["option1"][1];
-    let op1Ele=document.createElement("option");
-    createTxtNode(option1);
-    op1Ele.appendChild(option1);
-    hEle.appendChild(sEle);
+    let option2=actualJSON.optionsText["option1"][1];
+    let op1Ele=createOptions(option1);
+    let op2Ele=createOptions(option2);
+    let opBEle=createOptions("");
+    sEle.appendChild(opBEle);
+    sEle.appendChild(op1Ele);
+    sEle.appendChild(op2Ele);
+    hEle.after(sEle);
 }
 function readingJSONFile(){
     const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data.json`;
@@ -36,16 +41,12 @@ function readingJSONFile(){
     };
     http.send(null);
 }
-
-function setCounter(){
-    let counter=0;
-}
 function init(){
     let retval=readingJSONFile(callback=(response)=>{
         actualJSON=JSON.parse(response);
         createSelectBlock(actualJSON);
         });
-    }
+}
 
 
 

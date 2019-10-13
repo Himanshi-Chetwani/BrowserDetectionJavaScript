@@ -1,0 +1,40 @@
+{
+    "options": {
+        "Cities":{
+            "Arabic":{
+                "Ancient Cities":{
+                    "Middle East Studies":"null"
+                },
+                "New Cities":{
+                    "RIT Dubai - Direct Enroll":"null"
+                }
+            },
+            "Spanish":{
+                "Humanities":{
+                    "Advanced Liberal Arts":"null"
+                },
+                "Science":{
+                    "Santiago - Health Studies":"null"
+                }
+            }
+        },
+        "Nature":{
+            "Mountains":{
+                "South America":{
+                    "Semester in Cusco - Universidad San Ignacio Loyola":"null"
+                },
+                "Asia":{
+                    "Big Cats of the Himalayas: Tracking and Conservation":"null"
+                }
+            },
+            "Islands":{
+                "Caribbean":{
+                    "Marine Resources Studies":"null"
+                },
+                "South Pacific":{
+                    "Protecting the Phoenix islands":"null"
+                }
+            }
+        }
+    }
+}
