@@ -19,10 +19,10 @@
 
                 },
                 "Ancient Cities":{
-                    "Middle East Studies":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is :":"Middle East Studies"
                 },
                 "New Cities":{
-                    "RIT Dubai - Direct Enroll":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is : ":"RIT Dubai - Direct Enroll"
                 }
             },
             "Spanish":{
@@ -33,10 +33,10 @@
 
                 },
                 "Humanities":{
-                    "Advanced Liberal Arts":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is : ":"Advanced Liberal Arts"
                 },
                 "Science":{
-                    "Santiago - Health Studies":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is : ":"Santiago - Health Studies"
                 }
             }
         },
@@ -69,10 +69,10 @@
 
                 },
                 "Caribbean":{
-                    "Marine Resources Studies":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is : ":"Marine Resources Studies"
                 },
                 "South Pacific":{
-                    "Protecting the Phoenix islands":"Your Final Chosen Answer is : "
+                    "Your Final Chosen Answer is : ":"Protecting the Phoenix islands"
                 }
             }
         }

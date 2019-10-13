@@ -9,21 +9,22 @@ function createOptions(optionTxt){
     opEle.appendChild(opTxtNode);
     return opEle;
 }
-function creatingHeader(actualJSON){
+function creatingHeader(stringTxt){
     let hEle=document.createElement("h2");
-    let txtInput=actualJSON.headerTexts["headerText1"];
-    let txtEle=createTxtNode(txtInput);
+    let txtEle=createTxtNode(stringTxt);
     hEle.appendChild(txtEle);
     return hEle;
 }
 function createSelectBlock(optionList){
     let sEle=document.createElement("select");
-    console.log(Object.keys(optionList));
-    for(optionTxt in optionList){
+    let hEle=creatingHeader(Object.keys(optionList)[0]);
+    for(let i=1;i<((Object.keys(optionList)).length);i++){
+        optionTxt=Object.keys(optionList)[i];
         opEle=createOptions(optionTxt);
         sEle.appendChild(opEle);    
     }
-    document.body.appendChild(sEle);
+    document.body.appendChild(hEle);
+    hEle.after(sEle);
     sEle.addEventListener("change",()=>{
         let newVal= optionList[sEle.value];
         createSelectBlock(newVal);
