@@ -19,6 +19,10 @@ function createSelectBlock(optionList){
     let sEle=document.createElement("select");
     let hEle=creatingHeader(Object.keys(optionList)[0]);
     for(let i=1;i<((Object.keys(optionList)).length);i++){
+        if((Object.keys(optionList)[i]=="Your Final Chosen Answer is : ")){
+            hEle=creatingHeader(optionList["Your Final Chosen Answer is : "]);
+            break;
+        }
         optionTxt=Object.keys(optionList)[i];
         opEle=createOptions(optionTxt);
         sEle.appendChild(opEle);    
