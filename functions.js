@@ -28,7 +28,7 @@ function createSelectBlock(optionList){
         let newVal= optionList[sEle.value];
         createSelectBlock(newVal);
     });
-    
+ 
 }
 /*function createSelectBlock(actualJSON){
     let hEle=creatingHeader(actualJSON);
