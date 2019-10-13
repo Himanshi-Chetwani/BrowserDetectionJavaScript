@@ -1,7 +1,16 @@
 {
     "options": {
+        " ":{
+
+        },
         "Cities":{
+            " ":{
+
+            },
             "Arabic":{
+                " ":{
+
+                },
                 "Ancient Cities":{
                     "Middle East Studies":"null"
                 },
@@ -10,6 +19,9 @@
                 }
             },
             "Spanish":{
+                " ":{
+
+                },
                 "Humanities":{
                     "Advanced Liberal Arts":"null"
                 },
@@ -19,7 +31,13 @@
             }
         },
         "Nature":{
+            " ":{
+
+            },
             "Mountains":{
+                " ":{
+
+                },
                 "South America":{
                     "Semester in Cusco - Universidad San Ignacio Loyola":"null"
                 },
@@ -28,6 +46,9 @@
                 }
             },
             "Islands":{
+                " ":{
+                    
+                },
                 "Caribbean":{
                     "Marine Resources Studies":"null"
                 },

@@ -1,3 +1,4 @@
+const depth=0;
 function createTxtNode(txtInput){
     let txtEle=document.createTextNode(txtInput);
     return txtEle;
@@ -15,7 +16,19 @@ function creatingHeader(actualJSON){
     hEle.appendChild(txtEle);
     return hEle;
 }
-function createSelectBlock(actualJSON){
+function createSelectBlock(optionList){
+    let sEle=document.createElement("select");
+    console.log(Object.keys(optionList));
+    for(optionTxt in optionList){
+        //console.log(optionTxt);
+        opEle=createOptions(optionTxt);
+        sEle.appendChild(opEle);    
+    }
+    document.body.appendChild(sEle);
+    sEle.addEventListener("change",()=>{console.log(sEle.value)});
+ 
+}
+/*function createSelectBlock(actualJSON){
     let hEle=creatingHeader(actualJSON);
     document.body.appendChild(hEle);
     let sEle=document.createElement("select");
@@ -28,9 +41,9 @@ function createSelectBlock(actualJSON){
     sEle.appendChild(op1Ele);
     sEle.appendChild(op2Ele);
     hEle.after(sEle);
-}
+}*/
 function readingJSONFile(){
-    const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data.json`;
+    const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data_new.json`;
     let http = new XMLHttpRequest();
     http.open("GET", url, true);
     http.onreadystatechange = handleHttpResponse;
@@ -44,7 +57,7 @@ function readingJSONFile(){
 function init(){
     let retval=readingJSONFile(callback=(response)=>{
         actualJSON=JSON.parse(response);
-        createSelectBlock(actualJSON);
+        createSelectBlock(actualJSON.options);
         });
 }
 
