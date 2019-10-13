@@ -20,13 +20,15 @@ function createSelectBlock(optionList){
     let sEle=document.createElement("select");
     console.log(Object.keys(optionList));
     for(optionTxt in optionList){
-        //console.log(optionTxt);
         opEle=createOptions(optionTxt);
         sEle.appendChild(opEle);    
     }
     document.body.appendChild(sEle);
-    sEle.addEventListener("change",()=>{console.log(sEle.value)});
- 
+    sEle.addEventListener("change",()=>{
+        let newVal= optionList[sEle.value];
+        createSelectBlock(newVal);
+    });
+    
 }
 /*function createSelectBlock(actualJSON){
     let hEle=creatingHeader(actualJSON);
