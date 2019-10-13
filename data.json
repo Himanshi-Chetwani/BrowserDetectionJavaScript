@@ -2,6 +2,12 @@
     "headerTexts":{
         "headerText1":"Do you prefer cities or nature?",
         "headerText2":"Do you prefer Arabic or Spanish?"
+    },
+    "optionsText":{
+        "option1":[
+            "cities",
+            "nature"
+        ]
     }
 
 }
