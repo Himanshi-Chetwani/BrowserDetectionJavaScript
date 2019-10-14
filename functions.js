@@ -19,36 +19,29 @@ function createSelectBlock(optionList){
     let sEle=document.createElement("select");
     let hEle=creatingHeader(Object.keys(optionList)[0]);
     for(let i=1;i<((Object.keys(optionList)).length);i++){
-        if((Object.keys(optionList)[i]=="Your Final Chosen Answer is : ")){
-            hEle=creatingHeader(optionList["Your Final Chosen Answer is : "]);
-            break;
-        }
+        console.log(Object.keys(optionList)[length]);
         optionTxt=Object.keys(optionList)[i];
         opEle=createOptions(optionTxt);
         sEle.appendChild(opEle);    
+    }
+    if((Object.keys(optionList)[length])==="Your Final Chosen Answer is : "){
+        hEle1=creatingHeader("Your Destiny Takes you to ");
+        hEle=creatingHeader(optionList["Your Final Chosen Answer is : "]);
+        document.body.appendChild(hEle1);
+        hEle1.after(hEle);
+        return;
     }
     document.body.appendChild(hEle);
     hEle.after(sEle);
     sEle.addEventListener("change",()=>{
         let newVal= optionList[sEle.value];
+        for(let i=0;i<sEle.childNodes.length;i++){
+            console.log("L",sEle.childNodes.length);
+            console.log("child node",sEle.childNodes[i]);
+        }
         createSelectBlock(newVal);
     });
- 
 }
-/*function createSelectBlock(actualJSON){
-    let hEle=creatingHeader(actualJSON);
-    document.body.appendChild(hEle);
-    let sEle=document.createElement("select");
-    let option1=actualJSON.optionsText["option1"][0];
-    let option2=actualJSON.optionsText["option1"][1];
-    let op1Ele=createOptions(option1);
-    let op2Ele=createOptions(option2);
-    let opBEle=createOptions("");
-    sEle.appendChild(opBEle);
-    sEle.appendChild(op1Ele);
-    sEle.appendChild(op2Ele);
-    hEle.after(sEle);
-}*/
 function readingJSONFile(){
     const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data_new.json`;
     let http = new XMLHttpRequest();
