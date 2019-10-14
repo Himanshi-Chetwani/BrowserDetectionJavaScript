@@ -1,4 +1,3 @@
-const depth=0;
 function createTxtNode(txtInput){
     let txtEle=document.createTextNode(txtInput);
     return txtEle;
@@ -15,8 +14,11 @@ function creatingHeader(stringTxt){
     hEle.appendChild(txtEle);
     return hEle;
 }
-function createSelectBlock(optionList){
+function createSelectBlock(optionList,counter,prev){
     let sEle=document.createElement("select");
+    sEle.setAttribute("id",counter);
+    prev=counter;
+    counter=counter+1;
     let hEle=creatingHeader(Object.keys(optionList)[0]);
     for(let i=1;i<((Object.keys(optionList)).length);i++){
         console.log(Object.keys(optionList)[length]);
@@ -35,11 +37,11 @@ function createSelectBlock(optionList){
     hEle.after(sEle);
     sEle.addEventListener("change",()=>{
         let newVal= optionList[sEle.value];
-        for(let i=0;i<sEle.childNodes.length;i++){
+        /*for(let i=0;i<sEle.childNodes.length;i++){
             console.log("L",sEle.childNodes.length);
             console.log("child node",sEle.childNodes[i]);
-        }
-        createSelectBlock(newVal);
+        }*/
+        createSelectBlock(newVal,counter,prev);
     });
 }
 function readingJSONFile(){
@@ -57,7 +59,7 @@ function readingJSONFile(){
 function init(){
     let retval=readingJSONFile(callback=(response)=>{
         actualJSON=JSON.parse(response);
-        createSelectBlock(actualJSON.options);
+        createSelectBlock(actualJSON.options,0,-1);
         });
 }
 
