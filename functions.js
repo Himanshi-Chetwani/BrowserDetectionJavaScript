@@ -32,14 +32,16 @@ function createSelectBlock(optionList) {
     console.log(Object.keys(optionList));
     if ((Object.keys(optionList)[length]) === "Your Final Chosen Answer is : ") {
         hEle1 = creatingHeader("Your Destiny Takes you to ");
-        console.log(optionList);
-        hEle = creatingHeader(optionList["Your Final Chosen Answer is : "]);
+        linkEle=document.createElement("a");
+        linkEle.href=optionList["Your Final Chosen Answer is : "];
         hEle1.setAttribute("id", "ans");
-        hEle.setAttribute("id", "ans2");
+        linkEle.setAttribute("id", "ans2");
+        let tNode=createTxtNode(optionList["Your Final Chosen Answer is : "]);
+        linkEle.appendChild(tNode);
         document.body.appendChild(hEle1);
-        hEle1.after(hEle);
+        hEle1.after(linkEle);
         let fEle = createForm();
-        hEle.after(fEle);
+        linkEle.after(fEle);
         return;
     }
     labelEle.appendChild(sEle);
@@ -50,7 +52,7 @@ function createSelectBlock(optionList) {
             if (document.getElementById("formDiv") != null) {
                 document.getElementById("formDiv").remove();
             }
-            for (let i = parseInt(divEle.id) + 1; i < 3; i++) {
+            for (let i = parseInt(divEle.id) + 1; i < ((Object.keys(optionList).length)-1); i++) {
                 if (document.getElementById(i) != null) {
                     document.getElementById(i).remove();
                     prev = counter;
