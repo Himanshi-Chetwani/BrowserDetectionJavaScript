@@ -1,0 +1,25 @@
+.formDiv {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+  }
+  .formDiv h2, .formDiv label {
+    font-family:Georgia, Times, "Times New Roman", serif;
+}
+.formDiv ul {
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+.formDiv li{
+    padding:12px; 
+ 
+    position:relative;
+}
+h1 {
+    border-bottom:1px solid #777;
+    padding-bottom: 5px;
+    color: brown;
+}

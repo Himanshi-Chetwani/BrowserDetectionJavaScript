@@ -1,0 +1,54 @@
+{
+    "options": {
+        "Do you prefer Summer or Remaining academic year?": {},
+        "Select a value": {},
+        "Summer": {
+            "Do you prefer Arts or Science?": {},
+            "Select a value": {},
+            "Arts": {
+                "Do you prefer English or a foreign language": {},
+                "Select a value": {},
+                "English": {
+                    "Your Final Chosen Answer is : ": "Florence University of Arts"
+                },
+                "Foreign Language": {
+                    "Your Final Chosen Answer is : ": "Siena School fr Liberal Arts"
+                }
+            },
+            "Science": {
+                "Do you prefer Europe or Amsterdam?": {},
+                "Select a value": {},
+                "Europe": {
+                    "Your Final Chosen Answer is : ": "IES Abroad Center"
+                },
+                "Amsterdam": {
+                    "Your Final Chosen Answer is : ": "University of Sydney"
+                }
+            }
+        },
+        "Remaining Academic Year": {
+            "Do you prefer Spring or Fall": {},
+            "Select a value": {},
+            "Spring": {
+                "Do you prefer South Business or Social Science": {},
+                "Select a value": {},
+                "Buisness": {
+                    "Your Final Chosen Answer is : ": "Vrije Universiteit Amsterdam"
+                },
+                "Social Science": {
+                    "Your Final Chosen Answer is : ": "Trinity College Dublin"
+                }
+            },
+            "Fall": {
+                "Do you prefer Tropical Weather or Cold": {},
+                "Select a value": {},
+                "Tropical Weather": {
+                    "Your Final Chosen Answer is : ": "Akita International University"
+                },
+                "Cold": {
+                    "Your Final Chosen Answer is : ": "University of Aukland"
+                }
+            }
+        }
+    }
+}
