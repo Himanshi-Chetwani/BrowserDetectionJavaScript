@@ -1,5 +1,4 @@
-let win_width,    // Distance to move
-    dxArr = [];     // Direction for each item
+let win_width, dxArr = [], counter = -1, prev = -2;
 function createTxtNode(txtInput) {
     let txtEle = document.createTextNode(txtInput);
     return txtEle;
@@ -16,54 +15,60 @@ function creatingHeader(stringTxt) {
     hEle.appendChild(txtEle);
     return hEle;
 }
-function createSelectBlock(optionList, counter, prev) {
+function createSelectBlock(optionList) {
+    let divEle = document.createElement("div");
+    prev = counter;
+    counter = counter + 1;
+    divEle.setAttribute("id", counter);
+    let labelEle = document.createElement("label");
+    let txtEle = createTxtNode(Object.keys(optionList)[0]);
+    labelEle.appendChild(txtEle);
     let sEle = document.createElement("select");
-    sEle.setAttribute("id", counter);
-    console.log("1.When we set", counter);
-    let hEle = creatingHeader(Object.keys(optionList)[0]);
-    counterh = counter + 5;
-    hEle.setAttribute("id", counterh);
-    for (let i = 1; i < ((Object.keys(optionList)).length); i++) {
+    for (let i = 1; i < (Object.keys(optionList).length); i++) {
         optionTxt = Object.keys(optionList)[i];
         opEle = createOptions(optionTxt);
         sEle.appendChild(opEle);
     }
+    console.log(Object.keys(optionList));
     if ((Object.keys(optionList)[length]) === "Your Final Chosen Answer is : ") {
         hEle1 = creatingHeader("Your Destiny Takes you to ");
+        console.log(optionList);
         hEle = creatingHeader(optionList["Your Final Chosen Answer is : "]);
-        hEle.setAttribute("id", "ans");
-        hEle1.setAttribute("id", "ans2");
+        hEle1.setAttribute("id", "ans");
+        hEle.setAttribute("id", "ans2");
         document.body.appendChild(hEle1);
         hEle1.after(hEle);
         let fEle = createForm();
         hEle.after(fEle);
         return;
     }
-    document.body.appendChild(hEle);
-    hEle.after(sEle);
+    labelEle.appendChild(sEle);
+    divEle.appendChild(labelEle);
+    document.body.appendChild(divEle);
     sEle.addEventListener("change", () => {
-        if (prev >= sEle.id) {
-            for (let i = parseInt(sEle.id) + 1; i < 3; i++) {
+        if (prev >= divEle.id) {
+            if (document.getElementById("formDiv") != null) {
+                document.getElementById("formDiv").remove();
+            }
+            for (let i = parseInt(divEle.id) + 1; i < 3; i++) {
                 if (document.getElementById(i) != null) {
                     document.getElementById(i).remove();
-                    document.getElementById(i + 5).remove();
-                    counterh = counterh - 5;
+                    prev = counter;
                     counter = counter - 1;
-                    console.log("2.After deleting", counter);
                 }
+                if (document.getElementById("ans") != null) {
+                    document.getElementById("ans").remove();
+                }
+                if (document.getElementById("ans2") != null) {
+                    document.getElementById("ans2").remove();
+                }
+
             }
-            if (document.getElementById("ans") != null) {
-                document.getElementById("ans").remove();
-            }
-            if (document.getElementById("ans2") != null) {
-                document.getElementById("ans2").remove();
-            }
+            counter = counter - 1;
         }
+
         let newVal = optionList[sEle.value];
-        prev = counter;
-        counter = counter + 1;
-        console.log("3.For next level.", counter);
-        createSelectBlock(newVal, counter, prev);
+        createSelectBlock(newVal);
     });
 }
 function readingJSONFile() {
@@ -103,7 +108,7 @@ function createSection(inp1) {
 }
 function createForm() {
     let divEle = document.createElement("div");
-    divEle.setAttribute("class", "formDiv");
+    divEle.setAttribute("id", "formDiv");
     let hEle = creatingHeader("Sending Your Results!");
     let fEle = document.createElement("form");
     fEle.setAttribute("class", "info-form");
@@ -163,7 +168,11 @@ function moveIt(whichOne, id) {
         moveIt(whichOne, id);
     }, 20);
 }
-
+function createFormBlock(optionsListOne) {
+    let fEle = document.createElement("form");
+    fEle.setAttribute("class", "firstForm");
+    createSelectBlock(optionsListOne);
+}
 function init() {
     dHtml();
     let retval = readingJSONFile(callback = (response) => {
@@ -172,7 +181,7 @@ function init() {
         let tEle = createTxtNode("Date With Destiny");
         hEle.appendChild(tEle);
         document.body.appendChild(hEle);
-        createSelectBlock(actualJSON.options, 0, -1);
+        createFormBlock(actualJSON.options);
     });
 }
 

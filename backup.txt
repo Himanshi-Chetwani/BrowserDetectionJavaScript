@@ -1,0 +1,50 @@
+function createSelectBlock(optionList, counter, prev) {
+    let sEle = document.createElement("select");
+    sEle.setAttribute("id", counter);
+    console.log("1.When we set", counter);
+    let hEle = creatingHeader(Object.keys(optionList)[0]);
+    counterh = counter + 5;
+    hEle.setAttribute("id", counterh);
+    for (let i = 1; i < ((Object.keys(optionList)).length); i++) {
+        optionTxt = Object.keys(optionList)[i];
+        opEle = createOptions(optionTxt);
+        sEle.appendChild(opEle);
+    }
+    if ((Object.keys(optionList)[length]) === "Your Final Chosen Answer is : ") {
+        hEle1 = creatingHeader("Your Destiny Takes you to ");
+        hEle = creatingHeader(optionList["Your Final Chosen Answer is : "]);
+        hEle.setAttribute("id", "ans");
+        hEle1.setAttribute("id", "ans2");
+        document.body.appendChild(hEle1);
+        hEle1.after(hEle);
+        let fEle = createForm();
+        hEle.after(fEle);
+        return;
+    }
+    document.body.appendChild(hEle);
+    hEle.after(sEle);
+    sEle.addEventListener("change", () => {
+        if (prev >= sEle.id) {
+            for (let i = parseInt(sEle.id) + 1; i < 3; i++) {
+                if (document.getElementById(i) != null) {
+                    document.getElementById(i).remove();
+                    document.getElementById(i + 5).remove();
+                    counterh = counterh - 5;
+                    counter = counter - 1;
+                    console.log("2.After deleting", counter);
+                }
+            }
+            if (document.getElementById("ans") != null) {
+                document.getElementById("ans").remove();
+            }
+            if (document.getElementById("ans2") != null) {
+                document.getElementById("ans2").remove();
+            }
+        }
+        let newVal = optionList[sEle.value];
+        prev = counter;
+        counter = counter + 1;
+        console.log("3.For next level.", counter);
+        createSelectBlock(newVal, counter, prev);
+    });
+}
