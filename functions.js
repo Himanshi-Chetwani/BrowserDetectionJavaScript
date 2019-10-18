@@ -51,7 +51,7 @@ function createSelectBlock(optionList) {
         sEle.appendChild(opEle);
     }
     if (((Object.keys(optionList).length) == 1)) {
-        hEle1 = creatingHeader("Click here to unravel your study destination!");
+        hEle1 = creatingHeader("Click here to unfold your study destination!");
         linkEle = document.createElement("a");
         let tempSt = Object.keys(optionList)[length];
         linkEle.href = optionList[tempSt];
@@ -61,28 +61,12 @@ function createSelectBlock(optionList) {
         let fEle = createForm();
         let hfEle;
         fEle.addEventListener("click",()=>{
-            console.log("Entering");
             storeCookie();
         })
         let chEle = createChoices();
         linkEle.after(fEle);
         fEle.after(chEle);
         return;
-        /*hEle1 = creatingHeader("Click on the link to unravel your study destination!");
-        hEle1.setAttribute("id","res");
-        linkEle=document.createElement("a");
-        linkEle.href=optionList["Your Final Chosen Answer is : "];
-        hEle1.setAttribute("id", "ans");
-        linkEle.setAttribute("id", "ans2");
-        let tNode=createTxtNode(optionList["Your Final Chosen Answer is : "]);
-        linkEle.appendChild(tNode);
-        document.body.appendChild(hEle1);
-        hEle1.after(linkEle);
-        let fEle = createForm();
-        let chEle=createChoices();
-        linkEle.after(fEle);
-        fEle.after(chEle);
-        return;*/
     }
     labelEle.appendChild(sEle);
     divEle.appendChild(labelEle);
