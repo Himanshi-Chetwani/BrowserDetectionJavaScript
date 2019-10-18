@@ -115,7 +115,7 @@ function createSelectBlock(optionList) {
     });
 }
 function readingJSONFile() {
-    const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data_Set_two.json`;
+    const url = `https://raw.githubusercontent.com/Himanshi-Chetwani/Temp/master/data_new.json`;
     let http = new XMLHttpRequest();
     http.open("GET", url, true);
     http.onreadystatechange = handleHttpResponse;
