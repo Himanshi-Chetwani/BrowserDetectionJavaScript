@@ -1,6 +1,6 @@
 {
     "options": {
-        "Do you prefer Cities or ature?":{
+        "Do you prefer Cities or Nature?":{
         },
         "Select a value":{
 
@@ -26,7 +26,7 @@
                 }
             },
             "Spanish":{
-                "Do you prefer humanities or science?":{
+                "Do you prefer Humanities or Science?":{
 
                 },
                 "Select a value":{
@@ -41,14 +41,14 @@
             }
         },
         "Nature":{
-            "Do you prefer mountains or islands":{
+            "Do you prefer Mountains or Islands":{
 
             },
             "Select a value":{
 
             },
             "Mountains":{
-                "Do you prefer South Amerca or Asia":{
+                "Do you prefer South America or Asia":{
 
                 },
                 "Select a value":{

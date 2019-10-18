@@ -15,23 +15,57 @@ function creatingHeader(stringTxt) {
     hEle.appendChild(txtEle);
     return hEle;
 }
+function createChoices(){
+    let dEle=document.createElement("div");
+    dEle.setAttribute("id","ls");
+    let hEle=creatingHeader("Your chosen options are :");
+    let br=document.createElement("br");
+    let tempS;
+    for(let i=0;i<localStorage.length-1;i++)
+    {
+        let lEle=document.createElement("li");
+        tempS="string"+i;
+        tempS=localStorage.getItem(tempS);
+        let txtEle=createTxtNode(tempS);
+        lEle.appendChild(txtEle);
+        lEle.appendChild(txtEle);
+        hEle.appendChild(lEle);
+    }
+    
+    dEle.appendChild(hEle);
+    return dEle;
+}
 function createSelectBlock(optionList) {
     let divEle = document.createElement("div");
     prev = counter;
     counter = counter + 1;
     divEle.setAttribute("id", counter);
     let labelEle = document.createElement("label");
+    labelEle.setAttribute("for",counter+5);
     let txtEle = createTxtNode(Object.keys(optionList)[0]);
     labelEle.appendChild(txtEle);
     let sEle = document.createElement("select");
+    sEle.setAttribute("id",counter+5)
     for (let i = 1; i < (Object.keys(optionList).length); i++) {
         optionTxt = Object.keys(optionList)[i];
         opEle = createOptions(optionTxt);
         sEle.appendChild(opEle);
     }
-    console.log(Object.keys(optionList));
-    if ((Object.keys(optionList)[length]) === "Your Final Chosen Answer is : ") {
-        hEle1 = creatingHeader("Your Destiny Takes you to ");
+    if (((Object.keys(optionList).length)==1)) {
+        hEle1 = creatingHeader("Click here to unravel your study destination!");
+        linkEle=document.createElement("a");
+        let tempSt=Object.keys(optionList)[length];
+        linkEle.href=optionList[tempSt];
+        linkEle.setAttribute("id", "ans");
+        linkEle.appendChild(hEle1);
+        document.body.appendChild(linkEle);
+        let fEle = createForm();
+        let chEle=createChoices();
+        linkEle.after(fEle);
+        fEle.after(chEle);
+        return;
+        /*hEle1 = creatingHeader("Click on the link to unravel your study destination!");
+        hEle1.setAttribute("id","res");
         linkEle=document.createElement("a");
         linkEle.href=optionList["Your Final Chosen Answer is : "];
         hEle1.setAttribute("id", "ans");
@@ -41,13 +75,17 @@ function createSelectBlock(optionList) {
         document.body.appendChild(hEle1);
         hEle1.after(linkEle);
         let fEle = createForm();
+        let chEle=createChoices();
         linkEle.after(fEle);
-        return;
+        fEle.after(chEle);
+        return;*/
     }
     labelEle.appendChild(sEle);
     divEle.appendChild(labelEle);
     document.body.appendChild(divEle);
     sEle.addEventListener("change", () => {
+        let tempString="string"+divEle.id;
+        localStorage.setItem(tempString,sEle.value);
         if (prev >= divEle.id) {
             if (document.getElementById("formDiv") != null) {
                 document.getElementById("formDiv").remove();
@@ -61,8 +99,11 @@ function createSelectBlock(optionList) {
                 if (document.getElementById("ans") != null) {
                     document.getElementById("ans").remove();
                 }
-                if (document.getElementById("ans2") != null) {
+                /*if (document.getElementById("ans2") != null) {
                     document.getElementById("ans2").remove();
+                }*/
+                if (document.getElementById("ls") != null) {
+                    document.getElementById("ls").remove();
                 }
 
             }
