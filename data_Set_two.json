@@ -6,23 +6,25 @@
             "Do you prefer Arts or Science?": {},
             "Select a value": {},
             "Arts": {
-                "Do you prefer English or a foreign language": {},
+                "Do you prefer English or Spanish or German": {},
                 "Select a value": {},
                 "English": {
-                    "Your Final Chosen Answer is : ": "Florence University of Arts"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y5rsrz2q"
                 },
-                "Foreign Language": {
-                    "Your Final Chosen Answer is : ": "Siena School fr Liberal Arts"
-                }
+                "Spanish": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y45lhbxb"
+                },
+                "German": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/yxt83eno"
             },
             "Science": {
                 "Do you prefer Europe or Amsterdam?": {},
                 "Select a value": {},
                 "Europe": {
-                    "Your Final Chosen Answer is : ": "IES Abroad Center"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y3etxwwn"
                 },
                 "Amsterdam": {
-                    "Your Final Chosen Answer is : ": "University of Sydney"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y4kx7hqr"
                 }
             }
         },
@@ -33,20 +35,20 @@
                 "Do you prefer South Business or Social Science": {},
                 "Select a value": {},
                 "Buisness": {
-                    "Your Final Chosen Answer is : ": "Vrije Universiteit Amsterdam"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/yycadyr5"
                 },
                 "Social Science": {
-                    "Your Final Chosen Answer is : ": "Trinity College Dublin"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y3lyrzp6"
                 }
             },
             "Fall": {
                 "Do you prefer Tropical Weather or Cold": {},
                 "Select a value": {},
                 "Tropical Weather": {
-                    "Your Final Chosen Answer is : ": "Akita International University"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y6somyos"
                 },
                 "Cold": {
-                    "Your Final Chosen Answer is : ": "University of Aukland"
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/yysxwype"
                 }
             }
         }

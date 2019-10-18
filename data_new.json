@@ -1,78 +1,52 @@
 {
     "options": {
-        "Do you prefer Cities or Nature?":{
-        },
-        "Select a value":{
-
-        },
-        "Cities":{
-            "Do you prefer Arabic or Spanish?":{
-
-            },
-            "Select a value":{
-        },
-            "Arabic":{  
-                "Do you prefer Ancient or New Cities":{
-
+        "Do you prefer Cities or Nature?": {},
+        "Select a value": {},
+        "Cities": {
+            "Do you prefer Arabic or Spanish?": {},
+            "Select a value": {},
+            "Arabic": {
+                "Do you prefer Ancient or New Cities": {},
+                "Select a value": {},
+                "Ancient Cities": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y5rdyqtx"
                 },
-                "Select a value":{
-
-                },
-                "Ancient Cities":{
-                    "Your Final Chosen Answer is : "    :"https://tinyurl.com/y5rdyqtx"
-                },
-                "New Cities":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y2u5uws6"
+                "New Cities": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y2u5uws6"
                 }
             },
-            "Spanish":{
-                "Do you prefer Humanities or Science?":{
-
+            "Spanish": {
+                "Do you prefer Humanities or Science?": {},
+                "Select a value": {},
+                "Humanities": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y62v3lgm"
                 },
-                "Select a value":{
-
-                },
-                "Humanities":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y62v3lgm"
-                },
-                "Science":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y4duakm2"
+                "Science": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y4duakm2"
                 }
             }
         },
-        "Nature":{
-            "Do you prefer Mountains or Islands":{
-
-            },
-            "Select a value":{
-
-            },
-            "Mountains":{
-                "Do you prefer South America or Asia":{
-
+        "Nature": {
+            "Do you prefer Mountains or Islands": {},
+            "Select a value": {},
+            "Mountains": {
+                "Do you prefer South America or Asia": {},
+                "Select a value": {},
+                "South America": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y6c2vbzl"
                 },
-                "Select a value":{
-
-                },
-                "South America":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y6c2vbzl"
-                },
-                "Asia":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/yy3pjb64" 
+                "Asia": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/yy3pjb64"
                 }
             },
-            "Islands":{
-                "Do you prefer Caribbean or South Pacfic":{
-
+            "Islands": {
+                "Do you prefer Caribbean or South Pacfic": {},
+                "Select a value": {},
+                "Caribbean": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y4k8e8no"
                 },
-                "Select a value":{
-
-                },
-                "Caribbean":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y4k8e8no"
-                },
-                "South Pacific":{
-                    "Your Final Chosen Answer is : ":"https://tinyurl.com/y5nt3r95"
+                "South Pacific": {
+                    "Your Final Chosen Answer is : ": "https://tinyurl.com/y5nt3r95"
                 }
             }
         }
