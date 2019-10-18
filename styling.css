@@ -7,6 +7,12 @@
   #formDiv h2, #formDiv label {
     font-family:Georgia, Times, "Times New Roman", serif;
 }
+#hfEle{
+        width: 320px;
+        padding: 10px;
+        border: 5px solid rgb(228, 133, 172);
+        margin: 0;
+}
 #formDiv ul {
     list-style-type:none;
     list-style-position:outside;
